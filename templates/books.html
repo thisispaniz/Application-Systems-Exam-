@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Book List</title>
 </head>
 <body>
-    <h1>Book List</h1>
-    <ul>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publication Year</th>
+        </tr>
         {% for book in books %}
-            <li>{{ book.title }} - {{ book.author }} - {{ book.publication_year }}</li>
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.publication_year }}</td>
+            </tr>
         {% endfor %}
-    </ul>
+    </table>
+
 </body>
 </html>
