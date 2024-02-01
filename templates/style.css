@@ -1,0 +1,7 @@
+body{
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    background-color: rgb(42, 26, 131);
+    color: aliceblue;
+}   

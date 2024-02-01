@@ -14,6 +14,10 @@ class Book(db.Model):
 with booklist.app_context():
     db.create_all()
     
+@booklist.route('/')
+def index():
+    return render_template('index.html')
+
 @booklist.route('/books')
 def books():
     books = Book.query.all()
@@ -28,7 +32,7 @@ def add_book():
         added_book = Book(title=title, author=author, publication_year=publication_year)
         db.session.add(added_book)
         db.session.commit()
-        return redirect('/')
+        return redirect('/books')
     return render_template('add_book.html')
 
 if __name__ == "__main__":
